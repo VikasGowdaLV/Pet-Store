@@ -13,7 +13,7 @@ router.post("/signIn",function(req,res){
             // Store the user data in a session.
          console.log("Logged in sucsessfully");
             // redirect the user to the home page.
-            res.redirect('/');
+            res.redirect('/home');
         }else {
             // if the login function returns null send this error message back to the user.
             res.send('<h1>Oopss...Email/Password is incorrect!</h1>');

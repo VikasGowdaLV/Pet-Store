@@ -1,8 +1,8 @@
 const express=require("express");
 const bodyParser = require("body-parser");
-const ejs = require("ejs");
 const homeRoute=require("./routes/home/home");
 const dogsRoute=require("./routes/dogs/dogs");
+const customersRoute=require("./routes/customers/customers");
 const catsRoute=require("./routes/cats/cats");
 const signUpRoute=require("./routes/register/signUp/signUp");
 const logInRoute=require("./routes/register/signIn/signIn");
@@ -19,6 +19,7 @@ app.use(dogsRoute);
 app.use(catsRoute);
 app.use(signUpRoute);
 app.use(logInRoute);
+app.use(customersRoute);
 
 
 //setting up the server

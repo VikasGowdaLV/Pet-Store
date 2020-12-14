@@ -63,7 +63,7 @@ body {
   /* Dog image */
   .dog-img {
     width: 70%;
-    transform: rotate(25deg);
+    /* transform: rotate(5deg); */
     position: absolute;
     right:3%;
   

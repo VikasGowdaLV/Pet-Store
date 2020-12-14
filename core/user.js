@@ -1,4 +1,4 @@
-const pool = require("./pool");
+const mySql = require("./mySql");
 const bcrypt = require('bcrypt');
 
 
@@ -17,7 +17,7 @@ User.prototype = {
         let sql = `SELECT * FROM users WHERE ${field} = ?`;
 
 
-        pool.query(sql, user, function(err, result) {
+        mySql.query(sql, user, function(err, result) {
             if(err) throw err
 
             if(result.length) {
@@ -46,7 +46,7 @@ User.prototype = {
         // prepare the sql query
         let sql = `INSERT INTO users(firstName, lastName, email, password) VALUES (?, ?, ?, ?)`;
         // call the query give it the sql string and the values (bind array)
-        pool.query(sql, bind, function(err, result) {
+        mySql.query(sql, bind, function(err, result) {
             if(err) throw err;
             // return the last inserted id. if there is no error
             callback(result.insertId);

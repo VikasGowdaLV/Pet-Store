@@ -1,0 +1,92 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(111, 228, 107);
+    text-align: center;
+}
+footer{
+    padding: 2%;
+    background-color: rgb(111, 228, 107);
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top:50px;
+    color:white;
+    font-family: 'Dancing Script', cursive;
+}
+
+.headerName{
+    position: absolute;
+    text-align: center;
+    font-size: 3rem;
+    padding: 3px;
+    margin-left: 2%;
+    margin-top: 50px;
+    font-family: 'Dancing Script', cursive;
+    color:white;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    color:white;
+    position: absolute;
+    right: 30px;
+    top: 110px;
+    
+}
+ 
+hr{
+  border:none;
+  border-top: 2px solid;
+  color:green;
+  width: 50%;
+  margin: 50px auto;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.container{
+    background-color: lavender;
+    text-align: center;
+    font-size: medium;
+
+
+}
+
+.Dcolor{
+    display: inline;
+    font-size: large;
+    padding-top:50px;
+    margin:100px;
+}
+
+
+
+
+.dogImg{
+    width: 350px;
+    height: 300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+p{
+    font-size: 2rem;
+}
+
+.breedName{
+    font-family: 'JetBrains Mono', monospace;
+    padding-top:1% ;
+}
+
+.dogInfo{
+    font-family: 'Lobster', cursive;
+}

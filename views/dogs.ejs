@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dogs</title>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/petsStyle.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  </head>
+
+  <header>
+    <h1 class="headerName">Currently Avilable Breeds...</h1>
+    <h3>Note the pet id before you buy</h3>
+  </header>
+
+  <body>
+    
+
+    <% Dogs.forEach(function(dog){  %>
+      
+        
+          <h1 name="breed" class="breedName"><%= dog.Dbreed %></h1>
+          <img class="dogImg"  src="/images/dogs/<%=dog.img%>.jpg" alt="puppy">
+          <div class="dogInfo">
+            <p>Pet Id - <%= dog.Did %></p>
+            <p>Colour - <%= dog.Dcolor %></p>
+            <p>Age - <%= dog.Dage %> Weeks</p>
+            <p>Price - ₹<%= dog.Dprice %></p>
+          </div>
+          <button class="btn btn-success" onclick="location.href='/customers';" type="submit">Buy now!</button> 
+          <hr>
+        </div>
+
+        
+        <% }) %>
+       
+ </body>
+
+ <footer class="footer">Want to buy <a href="/cats">cats</a>?</footer>
+  

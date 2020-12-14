@@ -3,7 +3,7 @@ const router=express.Router();
 const User=require('../../../core/user');
 const user =new User(); 
 
-router.get("/signUp",function(req,res){
+router.get("/",function(req,res){
     res.sendFile(__dirname+"/signUp.html");
 });
 
@@ -20,7 +20,8 @@ router.post("/signUp",function(req,res){
         if(lastId) {
             // Get the user data by it's id. and store it in a session.
             console.log("Sucessfully Registerd");
-            res.redirect("/");
+            res.redirect("/home");
+            
         }else {
             console.log('Error creating a new user ...');
         }
