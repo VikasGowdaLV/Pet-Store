@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Previous orders</title>
+  <link rel="stylesheet" href="/css/previousOrdersStyle.css">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Piedra&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<header>
+    <h1 class="headerName">Your previous Orders...</h1>
+    <label for="">(You can return your pet within 3 days from the orderd date)</label>
+    
+</header>
+
+<body>
+    
+    <% Orders.forEach(function(order){ %>
+
+        
+
+        <%  var date=JSON.stringify(order.soldDate).slice(1,11); %>
+        <% var dayString=date.slice(8,11); %>
+        <%  var orderdDaynumber=parseInt(dayString); %>
+
+        <% var today = new Date(); %> 
+        <% var dd = String(today.getDate()).padStart(2, '0'); %> 
+        <% var todayNumber=parseInt(dd); %>
+  
+        <%  var diff=todayNumber-orderdDaynumber;  %>
+
+        <% if( diff <= 3 ){ %>
+
+        <div class="orderContainer"></div>  
+
+        <form id="cancelForm" action="/cancelOrder/<%= order.Sid %>" method="POST">
+
+        <p>Order id -<%= order.Sid %> </p>
+        <p>Type - <%= order.petType %></p>
+        <p>Breed - <%= order.petbreed %></p>
+        <p>Colour - <%= order.petColor %></p>
+        <p>Orderd date - <%= date %></p>
+        <p>Pet Price - ₹<%= order.sold_price %></p>
+        <button id="cancel" type="submit" class="btn" onclick="myFunction()">Return Pet!!</button>
+        
+        </form>
+          
+      </div>
+      <hr>
+      <%  } %>
+         
+      <%  if(diff > 4){ %>
+        <div class="orderContainer"></div>  
+        <p>Order id -<%= order.Sid %> </p>
+        <p>Type - <%= order.petType %></p>
+        <p>Breed - <%= order.petbreed %></p>
+        <p>Colour - <%= order.petColor %></p>
+        <p>Orderd date - <%= date %></p>
+        <p>Pet Price - ₹<%= order.sold_price %></p>
+        <button id="cancel" type="submit" class="btn" onclick="mineFunction()">Return pet!!</button>
+
+
+      </div>
+      <hr>
+      <% } %>
+
+ <% }) %>
+      
+        
+         
+        <script>
+          function myFunction() {
+            if(confirm("Are you sure want to return the pet?") == true){
+              alert("Return successfull!");
+
+            }else{
+              alert("Cancellation failed");
+              document.getElementById("cancelForm").setAttribute(action,"/previousOrders"); 
+              document.getElementById("cancelForm").setAttribute(method,"GET"); 
+            }
+          }
+
+          function mineFunction() {
+            alert("Sorry you cannot return the pet now!");
+          }
+        </script>
+        
+        
+        
+        
+
+        
+          
+
+</body>
+</html>

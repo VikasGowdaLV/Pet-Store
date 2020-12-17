@@ -50,12 +50,14 @@ User.prototype = {
             if(err) throw err;
             // return the last inserted id. if there is no error
             callback(result.insertId);
+            
+            
         });
     },
 
     login : function(email, password, callback)
     {
-        // find the user data by his username.
+        // find the user data by his email
         this.find(email, function(user) {
             // if there is a user by this username.
             if(user) {
@@ -63,7 +65,7 @@ User.prototype = {
                 if(bcrypt.compareSync(password, user.password)) {
                     // return his data.
                     callback(user);
-                    return;
+                    return user;
                 }  
             }
             // if the username/password is wrong then return null.

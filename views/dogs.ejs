@@ -14,7 +14,6 @@
 
   <header>
     <h1 class="headerName">Currently Avilable Breeds...</h1>
-    <h3>Note the pet id before you buy</h3>
   </header>
 
   <body>
@@ -22,18 +21,21 @@
 
     <% Dogs.forEach(function(dog){  %>
       
-        
+         <form action="/dogsCustomers/<%=dog.Did%>">
+
           <h1 name="breed" class="breedName"><%= dog.Dbreed %></h1>
           <img class="dogImg"  src="/images/dogs/<%=dog.img%>.jpg" alt="puppy">
           <div class="dogInfo">
-            <p>Pet Id - <%= dog.Did %></p>
             <p>Colour - <%= dog.Dcolor %></p>
             <p>Age - <%= dog.Dage %> Weeks</p>
             <p>Price - ₹<%= dog.Dprice %></p>
           </div>
-          <button class="btn btn-success" onclick="location.href='/customers';" type="submit">Buy now!</button> 
+          <button class="btn btn-danger" type="submit">Buy now!</button> 
           <hr>
-        </div>
+       
+
+        </form>
+          
 
         
         <% }) %>

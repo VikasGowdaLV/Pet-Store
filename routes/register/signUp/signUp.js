@@ -1,7 +1,9 @@
 const express=require("express");
 const router=express.Router();
 const User=require('../../../core/user');
+const mysql=require("../../../core/mySql");
 const user =new User(); 
+var userId=[];
 
 router.get("/",function(req,res){
     res.sendFile(__dirname+"/signUp.html");
@@ -20,6 +22,8 @@ router.post("/signUp",function(req,res){
         if(lastId) {
             // Get the user data by it's id. and store it in a session.
             console.log("Sucessfully Registerd");
+            userId.push(lastId);
+            
             res.redirect("/home");
             
         }else {
@@ -30,4 +34,4 @@ router.post("/signUp",function(req,res){
 });
 
 
-module.exports=router;
+module.exports={router,userId};
