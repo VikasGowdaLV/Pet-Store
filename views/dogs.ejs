@@ -23,16 +23,26 @@
       
          <form action="/dogsCustomers/<%=dog.Did%>">
 
-          <h1 name="breed" class="breedName"><%= dog.Dbreed %></h1>
-          <img class="dogImg"  src="/images/dogs/<%=dog.img%>.jpg" alt="puppy">
-          <div class="dogInfo">
-            <p>Colour - <%= dog.Dcolor %></p>
-            <p>Age - <%= dog.Dage %> Weeks</p>
-            <p>Price - ₹<%= dog.Dprice %></p>
-          </div>
-          <button class="btn btn-danger" type="submit">Buy now!</button> 
-          <hr>
-       
+          
+              <div class="col-4">
+
+               <h1 name="breed" class="breedName"><%= dog.Dbreed %></h1>
+               <img class="dogImg"  src="/images/dogs/<%=dog.img%>" alt="puppy">
+               <div class="dogInfo">
+                <p>Colour - <%= dog.Dcolor %></p>
+                 <p>Age - <%= dog.Dage %> Weeks</p>
+                  <p>Price - ₹<%= dog.Dprice %></p>
+                </div>
+                <button class="btn btn-danger" type="submit">Buy now!</button> 
+                <hr>
+                
+              </div>
+
+            
+
+        
+
+          
 
         </form>
           

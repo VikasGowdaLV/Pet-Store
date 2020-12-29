@@ -1,0 +1,28 @@
+
+<html>
+
+    <head>
+      <meta charset="utf-8">
+        <title>
+            Admin Login
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/signupStyle.css">
+    
+        <body>
+            <div class="loginbox">
+                <img src="/images/avatar.png" class="avatar">
+                <h1>Enter Admin credentials!</h1>
+                <form action="/adminLogin"  method="post">
+                    <p>Username</p>
+                    <input type="text" name="username" placeholder="Enter Admin username" required>
+                    <p>Password</p>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <input type="submit" value="Login">
+                    <p>Not the admin? </p>
+                    <a href="/signin">Login as a user</a>
+                </form>
+            </div>
+        </body>
+    </head>
+    
+    </html>

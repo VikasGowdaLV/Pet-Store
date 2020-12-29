@@ -1,0 +1,70 @@
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>InsertPet</title>
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/insertPet.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Do+Hyeon&family=Permanent+Marker&display=swap" rel="stylesheet">
+  </head>
+
+    <body>
+        <div class="detailsForm">
+
+            <h1>Enter the details of the pet to be inserted</h1>
+            <form  ref='uploadForm'   method="POST" action="/adminInsertPet"  encType="multipart/form-data">
+    
+                <div class="container" style="width: 500px; background-color: whitesmoke;background:url('/images/donating-blood-for-transfusions-blood-donation-and-blood-donor-bank-picture-id1171248030');opacity:80%;">
+                    <div class="container" style="opacity: 1;">
+                    <div class="mb-3"></div>
+
+                    <div class="form-group" style="opacity: 1;">
+                    
+                        <label class="petType">Pet type</label>
+                         <select  name="petType" id = "myList">
+                           <option name="petType"  value = "Select" class="form-control">--Select--</option>
+                           <option name="petType" value = "Dog" class="form-control">Dog</option>
+                           <option name="petType"  value = "Cat" class="form-control">Cat</option>
+                         </select>
+                     
+                    </div> 
+                              
+                    <div class="form-group" style="opacity: 1;">
+                        <label for="petBreed">Pet breed</label>
+                        <input type="text" name="petBreed" placeholder="Pet Breed" required id="petBreed" class="form-control">
+                    </div>
+                    
+                   
+                  
+                 
+                    <div class="form-group" style="opacity: 1;">
+                        <label for="petColor">Pet Colour</label>
+                        <input type="text" name="petColor" placeholder="Pet Colour" required id="petColor" class="form-control">
+                    </div>
+                    
+                    <div class="form-group" style="opacity: 1;">
+                        <label for="petAge">Pet Age</label>
+                        <input type="text" name="petAge" placeholder="Pet Age in Weeks" required id="petAge" class="form-control">
+                    </div>
+                    <div class="form-group" style="opacity: 1;">
+                        <label for="petPrice">Pet Price</label>
+                        <input type="number" name="petPrice" placeholder="Pet price in indian rupees" required id="petPrice" class="form-control">
+                    </div>
+                    <div class="form-group" style="opacity: 1;">
+                        <label for="petImage">Pet Image</label>
+                        <!-- <input type="file" name="pic" placeholder="Pet Image"  id="petImage" class="form-control" accept=""/> -->
+                        <input type="file" name="sampleFile" />
+                        <!-- <input type='submit' value='Upload!' /> -->
+                    </div>
+                    
+                    <button type="submit"  class="btn btn-primary" id="submit">Submit</button>
+                    <br><br><br>
+                </form>
+            </div>
+          </div>
+        
+     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </body>
+</html>
